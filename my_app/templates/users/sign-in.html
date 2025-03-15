@@ -1,0 +1,64 @@
+{% extends 'layout.html' %}
+
+
+{% block title %}
+
+    Sign in page
+
+{% endblock %}
+
+{% block content %}
+
+    
+<div class="transparent-background"></div>
+
+<div style="display: flex; position: absolute; width: 100%; height: 100%; align-items: center; justify-content: center;">
+
+    <div class="signup-div">
+
+        <span style="margin: 30px 0 10px 0; font-size: 20px;">
+            Please Sign in below
+        </span>
+        <hr style="width: 100%; margin-bottom: 5px;">
+
+        {% for message in messages %}
+
+                <h4 style="color: red;">{{message}}</h4>
+
+        {% endfor %}
+
+        <form action="" method="post" class="signup-form">
+
+            {% csrf_token %}
+
+
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required >
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            {% if request.GET.next %}
+                <input type="hidden" name="next" value="{{ request.GET.next }}">
+
+            {% endif %}
+            
+
+            <button type="submit">Sign In</button>
+
+            
+        </form>
+        
+        <a href="{% url 'users:signup' %}" style="margin-top: 10px; margin-left: 10px;">
+            Don't have an account?
+        </a>
+
+        <a href="/" style="margin-top: 10px; margin-left: 10px;">
+             Home page
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

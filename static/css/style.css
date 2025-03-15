@@ -1,0 +1,100 @@
+* {
+    padding: 0;
+    margin: 0;
+    
+}
+
+nav {
+    display: flex;
+    position: fixed;
+    height: 80px;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color: rgb(163, 216, 127);
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+
+
+nav a {
+    text-decoration: none; 
+    
+}
+
+.span-element {
+    font-size: 20px;
+    margin: 0 5px 0 5px;
+    color: black;
+    transition: opacity 0.15s;
+}
+
+.span-element:hover {
+    opacity: 0.5;
+}
+
+.sign-up-button {
+    background-color: black;
+    border: none;
+    color: white;
+    font-weight: bold;
+    padding: 9px;
+    border-radius: 5px;
+
+    margin-right: 5px;
+    margin-left: 5px;
+    cursor: pointer;
+    transition: opacity 0.15s;
+}
+
+.sign-up-button:hover,
+.sign-in-button:hover {
+    opacity: 0.8;
+}
+
+.sign-in-button {
+    background-color: rgb(23, 23, 182);
+    border: none;
+    color: white;
+    font-weight: bold;
+    padding: 9px;
+    border-radius: 5px;
+
+    margin-right: 5px;
+    margin-left: 5px;
+    cursor: pointer;
+    transition: opacity 0.15s;
+
+
+
+}
+
+
+
+.log-out-button {
+    background-color: white;
+    border: none;
+    color: black;
+    font-weight: bold;
+    padding: 9px;
+    border-radius: 5px;
+
+    margin-right: 5px;
+    margin-left: 5px;
+    cursor: pointer;
+    transition: background-color 0.15s, color 0.15s;
+
+}
+
+.log-out-button:hover {
+    background-color: black;
+    color: white;
+}
+
+
+h1 {
+    
+    margin-top: 100px;
+}

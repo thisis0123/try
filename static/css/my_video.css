@@ -1,0 +1,123 @@
+
+
+
+.left-sidebar {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  background-color: aliceblue;
+  row-gap: 10px;
+  top: 80px;
+  bottom: 0;
+  left: 0;
+  width: 200px;
+  overflow: auto;
+  box-shadow: 3px 3px 10px rgba(0,0,0,0.5);
+  padding-bottom: 50px;
+  
+}
+
+@media (max-width: 1100px) {
+  .left-sidebar {
+    display: none;
+  }
+}
+
+.side-video {
+  margin-top: 20px;
+  margin-left: 15px;
+  
+}
+
+.side-video img {
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.side-video .title {
+  display: block;
+  
+}
+
+
+.left-sidebar a {
+  text-decoration: none;
+  color: black;
+}
+
+.left-sidebar a:hover {
+  text-decoration: underline;
+  color: blue;
+}
+
+
+
+/* from here you can do that   */
+
+.single-video-and-comments{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.video-with-full-title {
+  margin-top: 140px;
+  margin-bottom: 40px;
+}
+
+
+.video-with-full-title h4 {
+  margin-top: 10px;
+  font-size: 20px;
+  width: 570px;
+}
+
+
+
+.comment-section textarea {
+  outline: none;
+  width: 500px;
+  height: 100px;
+  display: inline-block;
+
+}
+
+.comment-section button {
+  padding: 6px 20px 6px 20px;
+  background-color: #1877f2;
+  color: white;
+  font-weight: bold;
+  margin-left: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.comment-section button:hover {
+  opacity: 0.8;
+}
+
+.type-comment {
+  display: flex; 
+  align-items: center; 
+  margin-top: 30px;
+  
+}
+
+.comment {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  width: 500px;
+}
+
+.commented-by-and-date {
+  margin-bottom: 20px;
+}
+
+.commented-by-and-date strong{
+  margin-right: 20px;
+}

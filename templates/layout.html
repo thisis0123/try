@@ -1,0 +1,75 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+            Django App
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/signup-form.css' %}">
+    <link rel="stylesheet" href="{% static 'css/my_videos.css' %}">
+    <link rel="stylesheet" href="{% static 'css/my_video.css' %}">
+    <link rel="stylesheet" href="{% static 'css/phone_styles.css' %}">
+    <script src="{% static 'js/main.js' %}" ></script>
+
+</head>
+<body>
+    <nav>
+
+        <div style="flex-shrink: 0;">
+
+            <a href="/">
+                <span class="span-element">Home Page</span>
+            </a> |
+
+
+            <a href="/videos/">
+                <span class="span-element">Videos</span>
+            </a> |
+            
+        </div>
+
+
+        <div>
+
+            {% if user.is_authenticated %}
+            
+                <form action="{% url 'users:logout' %}" method="post">
+                    {% csrf_token %}
+                    
+                    <button class="log-out-button" type="submit">Logout</button>
+                </form>
+             
+
+            {% else %}
+
+                <a href="{% url 'users:signup' %}">
+                    <button class="sign-up-button">Sign Up</button>
+                </a> 
+
+                
+                <a href="{% url 'users:signin' %}">
+                    <button class="sign-in-button">Sign in</button>
+                </a> 
+
+            {% endif %}
+            
+            
+        </div>   
+
+
+    </nav>
+
+    <main>
+        {% block content %}
+
+        {% endblock %}
+    </main>
+    
+</body>
+</html>

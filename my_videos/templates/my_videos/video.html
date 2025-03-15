@@ -1,0 +1,107 @@
+{% extends 'layout.html' %}
+
+
+{% block title%}
+
+
+
+{% endblock %}
+
+
+
+{% block content %}
+
+
+     
+    
+
+    <div class="left-sidebar">
+
+        {% for side_video in all_videos %}
+
+            <a href="{% url 'my_videos:video' slug=side_video.id %}">
+                
+                <div class="side-video">
+                    <img src="{{ side_video.video_thumbnail.url }}" >
+                    <span class="title">{{side_video.title|truncatechars:40}}</span>
+                </div>
+        
+            </a>
+
+        {% endfor %}
+
+    </div>
+
+
+    <div class="single-video-and-comments">
+
+
+        <div class="video-with-full-title">
+
+            <video controls height="300px" width="600px">
+                <source src="{{video.videofile.url}}"  type="video/mp4">
+            </video>
+    
+            <h4>{{video.title}}</h4>
+
+            
+            <div class="comment-section" style="margin-top: 50px;">
+
+                <hr>
+
+                <h3 style="margin-top: 10px; margin-bottom: 10px;">Comments</h3>
+
+                <hr>
+
+                <form  method="post" action="{% url 'my_videos:send_comment' %}" class="type-comment">
+
+                    {% csrf_token %}
+
+                    <textarea type="text" placeholder="Type a comment" name="comment" required></textarea>
+                    <input type="hidden" name="username" value="{{user.username}}" >
+                    <input type="hidden" name="id" value="{{video.id}}" >
+                    <button>Send</button>
+
+                </form>
+
+                <div class="comments">
+
+                    {% if not video.comments.all %}
+                        <p style="margin-top: 30px; font-weight: bold; font-size: 20px;">There are no comments....</p>
+
+                    {% else %}
+
+                        {% for comment in video.comments.all reversed %}
+                
+                            <div class="comment">
+
+                                <div class="commented-by-and-date" >
+                                    <strong>{{comment.commented_by}}</strong>
+                                    <strong>{{comment.date}}</strong>
+                                </div>
+
+                                <pre class="content-of-comment" style="font-size: 15px; white-space: pre-wrap;">
+                                    {{comment.comment|linebreaks}}
+                                </pre>
+
+                            </div>
+                            <hr>       
+                        
+                        {% endfor %}
+
+                    {% endif %}
+
+
+                </div>
+    
+            </div>
+
+    
+        </div>
+
+
+    </div>
+
+
+
+{% endblock %}
