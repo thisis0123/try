@@ -1,0 +1,76 @@
+
+
+@media  screen and (max-width: 600px) {
+
+
+
+    .sign-up-button ,
+    .sign-in-button ,
+    .log-out-button{
+
+        padding: 3px;
+        font-size: 13px;
+        
+    }
+
+
+    .span-element {
+        font-size: 15px;
+    }
+
+    .signup-div {
+        width: 99%;
+        height: 500px;
+    }
+
+    .grid {
+        width: 99%;
+        margin: 0;
+        margin-top: 100px;
+        grid-template-columns: auto;
+    }
+
+    .grid img {
+        width: 200px;
+        height: 120px;
+        object-fit: cover;
+      }
+
+
+    .video-grid h4 {
+        width: 200px;
+    }
+
+
+    .video-with-full-title video {
+        width: 300px;
+        height: 150px;
+        
+    }
+
+    .video-with-full-title h4 {
+        font-size: 14px;
+        width: 300px;
+    }
+
+    .comment-section textarea {
+        width: 200px;
+        height: 50px;
+        display: inline-block;
+      
+      }
+
+
+    .comment-section h3 {
+        font-size: 16px;
+    }
+
+    .comment-section button {
+        padding: 5px;
+        
+      }
+
+    .comment {
+        width: 200px;
+    }
+}

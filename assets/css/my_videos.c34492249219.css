@@ -1,0 +1,47 @@
+.grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    row-gap: 40px;
+    column-gap: 50px;
+    margin: 100px 40px 40px 40px;
+}
+
+@media (max-width: 1070px) {
+    .grid {
+      grid-template-columns: auto auto;
+    }
+  }
+
+
+.grid img {
+    width: 300px;
+    height: 190px;
+    object-fit: cover;
+  }
+   
+
+
+.video-grid {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+
+.video-grid h4 {
+    width: 300px;
+}
+
+
+.video-grid a {
+    text-decoration: none;
+    color: black;
+}
+
+.video-grid a:hover {
+    color: blue;
+    text-decoration: underline;
+}
