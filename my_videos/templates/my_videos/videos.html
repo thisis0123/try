@@ -10,27 +10,39 @@
 
 {% block content %}
 
+
+
+    <form method="get" action="/videos" class="search-by-title-form">
+        <input type="text" name="search-title" placeholder="Search by title" >
+    </form>
+
     
+    {% if not videos.all %}
+        <h2 style="display: flex; justify-content: center; margin-top: 100px;">There are no videos with this title!</h2>   
 
-    <div class="grid">
+    {% else %}
 
-        {% for video in videos %}
+        <div class="grid">
 
-            <div class="video-grid">
-            
-                <a href="{% url 'my_videos:video' slug=video.id %}">
+            {% for video in videos %}
 
-                    <img src="{{video.video_thumbnail.url}}">
-                    <h4>{{ video.title|truncatechars:50}}</h4>
-
-                </a>
+                <div class="video-grid">
                 
-            </div>
+                    <a href="{% url 'my_videos:video' slug=video.id %}">
+
+                        <img src="{{video.video_thumbnail.url}}">
+                        <h4>{{ video.title|truncatechars:50}}</h4>
+
+                    </a>
+                    
+                </div>
 
 
-        {% endfor %}
+            {% endfor %}
 
-    </div>
+        </div>
+
+    {% endif %}
 
 
 

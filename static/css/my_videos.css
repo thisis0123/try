@@ -1,9 +1,21 @@
+.search-by-title-form {
+  display: flex;
+  margin-top: 100px;
+  justify-content: center;
+}
+
+.search-by-title-form input {
+  width: 400px;
+  height: 20px;
+  outline: none;
+}
+
 .grid {
     display: grid;
     grid-template-columns: auto auto auto;
     row-gap: 40px;
     column-gap: 50px;
-    margin: 100px 40px 40px 40px;
+    margin: 0 40px 40px 40px;
 }
 
 @media (max-width: 1070px) {

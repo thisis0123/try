@@ -2,11 +2,20 @@ from django.shortcuts import render, redirect
 from .models import My_video, Comment
 from django.contrib.auth.decorators import login_required
 
+
 # Create your views here.
 
 @login_required(login_url='users:signin')
 def goto_videos(request):
-    videos= My_video.objects.all().order_by('-date')
+
+    if 'search-title' in request.GET:
+        search_for_this= request.GET['search-title']
+        videos= My_video.objects.filter(title__icontains=search_for_this)
+           
+    else:
+        videos= My_video.objects.all().order_by('-date')
+
+
     return render(request,'my_videos/videos.html', {'videos':videos})
 
 @login_required(login_url='users:signin')

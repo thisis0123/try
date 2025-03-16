@@ -73,4 +73,9 @@
     .comment {
         width: 200px;
     }
+
+
+    .search-by-title-form input {
+        width: 200px;
+      }
 }
